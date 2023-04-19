@@ -12,8 +12,8 @@ source:
     - patches/0001-remove-static-stdc.patch
 
 build:
-  number: 0
-  skip: true  # [win or py<310]
+  number: 1
+  skip: true  # [win]
   entry_points:
     - cocotb-config = cocotb.config:main
   run_exports:
