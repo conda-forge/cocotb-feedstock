@@ -1,5 +1,5 @@
 {% set name = "cocotb" %}
-{% set version = "1.7.2" %}
+{% set version = "1.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cocotb-{{ version }}.tar.gz
-  sha256: 959892eb94bd0b3ff40e0fca51d33a3936416deb853e2bac4f7f766b40002650 
+  sha256: 6e6495997ddb737dbcd47aa00b29d11f2237df8521e9b52064e8f59641231b4a
   patches:
     - patches/0001-remove-static-stdc.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   entry_points:
     - cocotb-config = cocotb.config:main
@@ -51,7 +51,7 @@ about:
   dev_url: https://github.com/cocotb/cocotb
   summary: cocotb is a coroutine based cosimulation library for writing VHDL and Verilog testbenches in Python.
   license: BSD-3-Clause
-  license_family: BSD 
+  license_family: BSD
   license_file:
     - LICENSE
     - cocotb/_vendor/tcl/license.terms
