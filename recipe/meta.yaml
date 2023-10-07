@@ -1,5 +1,5 @@
 {% set name = "cocotb" %}
-{% set version = "1.8.0" %}
+{% set version = "1.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cocotb-{{ version }}.tar.gz
-  sha256: 6e6495997ddb737dbcd47aa00b29d11f2237df8521e9b52064e8f59641231b4a
+  sha256: 1499dbe0d4d10676bc9b234861e1df171a7f02aca6b696b5fadf01fe61e3a4f6
   patches:
     - patches/0001-remove-static-stdc.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   entry_points:
     - cocotb-config = cocotb.config:main
