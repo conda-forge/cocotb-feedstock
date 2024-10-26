@@ -1,5 +1,5 @@
 {% set name = "cocotb" %}
-{% set version = "1.9.1" %}
+{% set version = "1.9.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cocotb-{{ version }}.tar.gz
-  sha256: 21a79c4b5c3d4d7743abd54cfbda387377a2cbdbb8af4b068fbf7745d2f55d8c
+  sha256: e4cdeaf51ec1b14e5430083ac56edc0b48ad05184f0307d90de44ff7bfdb1652
   patches:
     - patches/0001-remove-static-stdc.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   entry_points:
     - cocotb-config = cocotb.config:main
