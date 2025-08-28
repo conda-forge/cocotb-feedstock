@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cocotb-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cocotb-{{ version }}.tar.gz
   sha256: e4cdeaf51ec1b14e5430083ac56edc0b48ad05184f0307d90de44ff7bfdb1652
   patches:
     - patches/0001-remove-static-stdc.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   entry_points:
     - cocotb-config = cocotb.config:main
