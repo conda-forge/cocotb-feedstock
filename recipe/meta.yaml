@@ -56,7 +56,7 @@ about:
   license_family: BSD
   license_file:
     - LICENSE
-    - cocotb/_vendor/tcl/license.terms
+    - LICENSE.tcl
     - LICENSE.fli.acc
     - LICENSE.fli.mti
     - LICENSE.vhpi
