@@ -15,7 +15,8 @@ build:
   number: 0
   skip: true  # [win]
   entry_points:
-    - cocotb-config = cocotb.config:main
+    - cocotb-config = cocotb_tools.config:main
+
   run_exports:
     - {{ pin_subpackage("cocotb", max_pin="x") }}
   script:
