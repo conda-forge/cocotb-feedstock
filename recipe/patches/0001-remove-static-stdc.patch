@@ -1,18 +1,18 @@
-From e789ed2ad6a28e1ae1e7fa8188a08afdac42267c Mon Sep 17 00:00:00 2001
-From: Tim Paine <t.paine154@gmail.com>
-Date: Sat, 18 Mar 2023 23:09:54 -0400
-Subject: [PATCH] remove-static-stdc++
+From bd9f8437c95873eb241e2406d0d1aa4a72290943 Mon Sep 17 00:00:00 2001
+From: Tim Paine <3105306+timkpaine@users.noreply.github.com>
+Date: Thu, 18 Sep 2025 21:01:37 -0400
+Subject: [PATCH] remove static stdc
 
 ---
  cocotb_build_libs.py | 9 ---------
  1 file changed, 9 deletions(-)
 
 diff --git a/cocotb_build_libs.py b/cocotb_build_libs.py
-index 7e84ecf7..51edae7f 100755
+index 8c60a264..a94c606f 100755
 --- a/cocotb_build_libs.py
 +++ b/cocotb_build_libs.py
-@@ -320,15 +320,6 @@ class build_ext(_build_ext):
-                             "-Wl,-install_name,@rpath/%s.so" % install_name
+@@ -316,15 +316,6 @@ class build_ext(_build_ext):
+                             f"-Wl,-install_name,@rpath/{install_name}.so"
                          ]
  
 -                if sys.platform == "linux":
@@ -24,9 +24,9 @@ index 7e84ecf7..51edae7f 100755
 -                    # /path/to/libcocotbvhpi_modelsim.so)."
 -                    ext.extra_link_args += ["-static-libstdc++"]
 -
-                 ext.extra_link_args += ["-Wl,-rpath,%s" % rpath for rpath in rpaths]
+                 ext.extra_link_args += [f"-Wl,-rpath,{rpath}" for rpath in rpaths]
  
          # vpi_user.h and vhpi_user.h require that WIN32 is defined
 -- 
-2.40.0
+2.43.0
 
