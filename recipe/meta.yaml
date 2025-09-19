@@ -1,5 +1,5 @@
 {% set name = "cocotb" %}
-{% set version = "1.9.2" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,16 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cocotb-{{ version }}.tar.gz
-  sha256: e4cdeaf51ec1b14e5430083ac56edc0b48ad05184f0307d90de44ff7bfdb1652
+  sha256: 3d66772df87d0a334810f1c41cf0903975e30bb538328b46b920b33d4221b536
   patches:
     - patches/0001-remove-static-stdc.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   entry_points:
-    - cocotb-config = cocotb.config:main
+    - cocotb-config = cocotb_tools.config:main
+
   run_exports:
     - {{ pin_subpackage("cocotb", max_pin="x") }}
   script:
@@ -56,7 +57,7 @@ about:
   license_family: BSD
   license_file:
     - LICENSE
-    - cocotb/_vendor/tcl/license.terms
+    - LICENSE.tcl
     - LICENSE.fli.acc
     - LICENSE.fli.mti
     - LICENSE.vhpi
