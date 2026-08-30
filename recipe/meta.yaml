@@ -1,13 +1,13 @@
 {% set name = "cocotb" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cocotb-{{ version }}.tar.gz
-  sha256: 69887748412ff43e98f8579ad6c0da1f6ff19a94d0c3b4d6da472d8e86784e82
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/cocotb-{{ version }}.tar.gz
+  sha256: db9761f947dedf0f264dc1e7ef632e0f0b1d0eab26a4e6bbd4ca97ee46cb6da4
   patches:
     - patches/0001-remove-static-stdc.patch
 
