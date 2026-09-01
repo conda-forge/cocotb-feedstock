@@ -4,18 +4,16 @@ Date: Thu, 18 Sep 2025 21:01:37 -0400
 Subject: [PATCH] remove static stdc
 
 ---
- cocotb_build_libs.py | 9 ---------
- 1 file changed, 9 deletions(-)
+ cocotb_build_libs.py | 7 -------
+ 1 file changed, 7 deletions(-)
 
 diff --git a/cocotb_build_libs.py b/cocotb_build_libs.py
-index 8c60a264..a94c606f 100755
+index 82048a53..b055e0c4 100644
 --- a/cocotb_build_libs.py
 +++ b/cocotb_build_libs.py
-@@ -316,15 +316,6 @@ class build_ext(_build_ext):
-                             f"-Wl,-install_name,@rpath/{install_name}.so"
-                         ]
+@@ -315,12 +315,5 @@ class build_ext(_build_ext):
  
--                if sys.platform == "linux":
+                 if sys.platform == "linux":
 -                    # Avoid a runtime dependency on libstdc++. Some simulators
 -                    # ship a version of libstdc++6.so which is older than the
 -                    # one cocotb has been compiled with, which will then lead to
@@ -23,10 +21,8 @@ index 8c60a264..a94c606f 100755
 -                    # `GLIBCXX_3.4.29' not found (required by
 -                    # /path/to/libcocotbvhpi_modelsim.so)."
 -                    ext.extra_link_args += ["-static-libstdc++"]
--
-                 ext.extra_link_args += [f"-Wl,-rpath,{rpath}" for rpath in rpaths]
+                     if lib_name == "libgpi":
+                         ext.extra_link_args += ["-Wl,-soname,libgpi.so"]
  
-         # vpi_user.h and vhpi_user.h require that WIN32 is defined
 -- 
 2.43.0
-
