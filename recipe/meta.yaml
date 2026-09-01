@@ -10,6 +10,7 @@ source:
   sha256: db9761f947dedf0f264dc1e7ef632e0f0b1d0eab26a4e6bbd4ca97ee46cb6da4
   patches:
     - patches/0001-remove-static-stdc.patch
+    - patches/0002-build-libgpi-as-dylib-on-macos.patch
 
 build:
   number: 0

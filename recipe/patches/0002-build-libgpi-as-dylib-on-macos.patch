@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Tim Paine <3105306+timkpaine@users.noreply.github.com>
+Date: Tue, 1 Sep 2026 12:45:00 -0400
+Subject: [PATCH] Build libgpi as a dylib on macOS
+
+---
+ cocotb_build_libs.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/cocotb_build_libs.py b/cocotb_build_libs.py
+index b055e0c4..e8e0734b 100644
+--- a/cocotb_build_libs.py
++++ b/cocotb_build_libs.py
+@@ -311,6 +311,8 @@ class build_ext(_build_ext):
+                     if install_name is not None:
+                         ext.extra_link_args += [
+                             f"-Wl,-install_name,@rpath/{install_name}.so"
+                         ]
++                    if lib_name == "libgpi":
++                        ext.extra_link_args += ["-Wl,-dylib"]
+ 
+                 if sys.platform == "linux":
+-- 
+2.43.0
