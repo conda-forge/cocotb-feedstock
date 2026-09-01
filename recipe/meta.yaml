@@ -34,7 +34,9 @@ requirements:
     - setuptools
   run:
     - python
+    - exceptiongroup  # [py<311]
     - find-libpython
+    - pytest >=6
   run_constrained:
     - iverilog >=10.3
     - verilator >=5.004
