@@ -13,7 +13,7 @@ source:
     - patches/0002-build-libgpi-as-dylib-on-macos.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py>313]
   entry_points:
     - cocotb-config = cocotb_tools.config:main
